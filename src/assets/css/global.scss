@@ -428,6 +428,11 @@ img {
     color: var(--black-100);
   }
 
+  &__black_100 {
+    background-color: var(--black-100);
+    color: var(--white-100);
+  }
+
   &__pink_800 {
     background-color: var(--pink-800);
     color: var(--white-100);
@@ -440,7 +445,12 @@ img {
 
   &__green_300 {
     background-color: var(--green-300);
-    color: var(--white-100);
+    color: var(--white-000);
+  }
+
+  &__green_500 {
+    background-color: var(--green-500);
+    color: var(--white-000);
   }
 
   &__red_300 {
@@ -481,6 +491,7 @@ img {
 
     & svg {
       color: var(--red-500);
+      margin-right: 10px;
     }
   }
 
@@ -494,6 +505,10 @@ img {
 
   &__green_300 {
     color: var(--green-300);
+  }
+
+  &__green_500 {
+    color: var(--green-500);
   }
 
   &__red_300 {

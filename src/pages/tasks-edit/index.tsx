@@ -14,14 +14,25 @@ import { InputDefault } from "../../components/InputDefault";
 import { ButtonDefault } from "../../components/ButtonDefault";
 import { useState } from "react";
 
-const Trasks: React.FC = () => {
-  const [isLogin, setIsLogin] = useState(false);
+const TrasksEdit: React.FC = () => {
+  const [isLogin, setIsLogin] = useState(true);
   const [id, isId] = useState(false);
   return (
     <>
-      <HeaderBoard title="Tasks" />
+      <HeaderBoard title="Tasks Editar" />
       <div className="container">
         <section className={`content ${styles.tasks__container}`}>
+          <div className="dflex">
+            <ButtonDefault
+              className="dflex dflex__reverse_row color__yellow_800"
+              size="medium"
+              type={"button"}
+              title="Você está editando uma tarefa."
+            >
+              <FaTimes width={32} height={32} />
+            </ButtonDefault>
+          </div>
+
           <div className="dflex dflex__center">
             <InputDefault label="" type="text" placeholder="Qual sua tarefa?" />
             <ButtonDefault
@@ -43,6 +54,20 @@ const Trasks: React.FC = () => {
             </div>
             <div className="dflex dflex__end">
               <>
+                <ButtonDefault
+                  type={"button"}
+                  size={"link"}
+                  href={"/tasks-details"}
+                >
+                  <FaEye width={15} height={15} /> <span>Visualizar</span>
+                </ButtonDefault>
+                <ButtonDefault
+                  type={"button"}
+                  size={"link"}
+                  href={"/tasks-details"}
+                >
+                  <FaPen width={15} height={15} /> <span>Editar</span>
+                </ButtonDefault>
                 <ButtonDefault type={"button"} size={"icon"}>
                   <FaRegTrashAlt width={15} height={15} />
                   <span>Excluir</span>
@@ -62,6 +87,12 @@ const Trasks: React.FC = () => {
             <div className="dflex dflex__end">
               <>
                 <ButtonDefault type={"button"} size={"icon"}>
+                  <FaEye width={15} height={15} /> <span>Visualizar</span>
+                </ButtonDefault>
+                <ButtonDefault type={"button"} size={"icon"}>
+                  <FaPen width={15} height={15} /> <span>Editar</span>
+                </ButtonDefault>
+                <ButtonDefault type={"button"} size={"icon"}>
                   <FaRegTrashAlt width={15} height={15} />
                   <span>Excluir</span>
                 </ButtonDefault>
@@ -72,17 +103,18 @@ const Trasks: React.FC = () => {
       </div>
 
       <div className="container">
-        <div className={`content ${styles.tasks__container_apoiar}`}>
-          <ButtonDefault
-            type="button"
-            size="link"
-            href={"tasks-pay"}
-            title="Apoiar"
-          />
-        </div>
+        <section className={`content ${styles.tasks__container}`}>
+          <article className="">
+            <h3>Obrigado por apoiar esse projeto.</h3>
+            <div>
+              <FaRegClock />
+              <span>Última doação cerca de 2 horas</span>
+            </div>
+          </article>
+        </section>
       </div>
     </>
   );
 };
 
-export default Trasks;
+export default TrasksEdit;
